@@ -1,0 +1,550 @@
+/*
+[Obsidian-Veritas-Theme](https://github.com/veritas501/Obsidian-Veritas-Theme)
+*/
+
+body {
+    --accent-h: 153;
+    --accent-s: 47%;
+    --accent-l: 49%;
+    --icon-color-hover: hsl(var(--interactive-accent-hsl));
+    --background-modifier-message: hsl(var(--interactive-accent-hsl));
+    --background-modifier-hover: hsla(var(--interactive-accent-hsl), 0.05);
+    --nav-item-color-hover: hsl(var(--interactive-accent-hsl));
+    --nav-item-color-active: hsl(var(--interactive-accent-hsl));
+    --table-header-weight: var(--bold-weight);
+    --table-header-color: var(--text-normal);
+    --h1-size: 2em;
+    --h2-size: 1.8em;
+    --h3-size: 1.5em;
+    --h4-size: 1.4em;
+    --h5-size: 1.2em;
+    --h6-size: 1.2em;
+    --file-line-width: 860px;
+
+    /* 中性色 */
+    --mid-1: #ffffff;
+    --mid-2: #fafafa;
+    --mid-3: #f5f5f5;
+    --mid-4: #f0f0f0;
+    --mid-5: #d9d9d9;
+    --mid-6: #bfbfbf;
+    --mid-7: #8c8c8c;
+    --mid-8: #595959;
+    --mid-9: #434343;
+    --mid-10: #262626;
+    --mid-11: #1f1f1f;
+    --mid-12: #141414;
+    --mid-13: #000000;
+    /* 主题色 */
+    --main-0: #fffcfb;
+    --main-1: #fff3f0;
+    --main-2: #ffd4cc;
+    --main-3: #ffafa3;
+    --main-4: #ff887a;
+    --main-5: #ff5d52;
+    --main-6: #f22f27;
+    --main-7: #cc1616;
+    --main-8: #a60a0f;
+    --main-9: #80010a;
+    --main-10: #590009;
+
+    --side-bar-bg-color: #fff;
+    --control-text-color: #777;
+    --select-text-bg-color: #faa295;
+    --active-file-text-color: var(--mid-10);
+    --active-file-border-color: var(--main-6);
+    /* --active-file-bg-color: #fff3f0; */
+    --primary-color: var(--main-6);
+}
+
+.theme-light {
+    --text-normal: #34495e;
+    --background-secondary: #ffffff;
+    --cus-inline-code-text: var(--main-5);
+    --cus-code-block-border: #f4f4f4;
+    --cus-table-header: #f2f2f2;
+    --cus-table-gap-tr: #fafafa;
+    --table-row-background-hover: #f2f2f2;
+    --blockquote-color: var(--mid-7);
+}
+
+/* blockquote BEGIN*/
+.markdown-rendered blockquote {
+    padding: 24px 16px 12px;
+    margin: 24px 0 36px;
+    position: relative;
+    border: none;
+    border-left: 4px solid var(--main-6);
+    background-color: var(--main-0);
+    color: var(--mid-7);
+    font-size: 1em;
+    font-style: normal;
+    padding: 24px 16px 12px;
+    margin: 24px 0 36px;
+    line-height: 1.6;
+    text-indent: 0;
+}
+
+.markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote:before {
+    border-left: 4px solid var(--main-6);
+}
+
+.markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote {
+    background-color: var(--main-0);
+}
+
+.markdown-rendered blockquote:before {
+    content: '“';
+    position: absolute;
+    left: 12px;
+    top: 0;
+    color: var(--main-6);
+    font-size: 2em;
+    font-family: Arial, serif;
+    line-height: 1em;
+    font-weight: 700;
+}
+
+/* blockquote END*/
+
+
+/* code block BEGIN */
+.markdown-source-view.mod-cm6 .code-block-flair:hover,
+.markdown-rendered button.copy-code-button:hover {
+    background-color: hsla(var(--interactive-accent-hsl), 0.1);
+}
+
+.cm-s-obsidian span.cm-inline-code {
+    color: var(--cus-inline-code-text);
+    background-color: var(--main-0);
+}
+
+.markdown-rendered p code {
+    color: var(--cus-inline-code-text);
+    background-color: var(--main-0);
+}
+
+.markdown-rendered pre {
+    border: 1px solid var(--cus-code-block-border);
+}
+
+.cm-s-obsidian div.HyperMD-codeblock-begin-bg {
+    border-top: 1px solid var(--cus-code-block-border);
+}
+
+.cm-s-obsidian div.HyperMD-codeblock-end-bg {
+    border-bottom: 1px solid var(--cus-code-block-border);
+}
+
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock {
+    border-left: 1px solid var(--cus-code-block-border);
+    border-right: 1px solid var(--cus-code-block-border);
+}
+
+/* code block END*/
+
+
+/* table BEGIN*/
+table thead {
+    background-color: var(--cus-table-header);
+    font-weight: bold;
+}
+
+table tr:nth-child(2n),
+thead {
+    background-color: var(--cus-table-gap-tr);
+}
+
+/* table END*/
+
+
+/*Header BEGIN*/
+
+/*--- 主标题 ---*/
+.inline-title {
+    text-align: center;
+    padding-bottom: 0.3em;
+    font-size: 2em;
+    line-height: 1.2;
+    margin: 2.4em auto 1.2em;
+}
+
+/*--- 主标题下的小短线 ---*/
+.inline-title:after {
+    content: '';
+    display: block;
+    margin: 0.2em auto 0;
+    width: 200px;
+    height: 2px;
+    border-bottom: 2px dashed var(--main-6);
+}
+
+.markdown-preview-view h1,
+.markdown-preview-view h2,
+.markdown-preview-view h3,
+.markdown-preview-view h4,
+.markdown-preview-view h5,
+.markdown-preview-view h6,
+.HyperMD-header .cm-header-1:not(.cm-formatting),
+.HyperMD-header .cm-header-2:not(.cm-formatting),
+.HyperMD-header .cm-header-3:not(.cm-formatting),
+.HyperMD-header .cm-header-4:not(.cm-formatting),
+.HyperMD-header .cm-header-5:not(.cm-formatting),
+.HyperMD-header .cm-header-6:not(.cm-formatting) {
+    position: relative;
+    font-weight: bold;
+}
+
+.markdown-preview-view h1:hover::before,
+.HyperMD-header .cm-header-1:hover::before {
+    content: 'h1';
+    position: absolute;
+    font-size: 10px;
+    color: rgb(221 221 221);
+    font-weight: 400;
+    width: auto;
+    left: -19px;
+    border: 1px solid;
+    padding: 0px 2px;
+    border-radius: 3px;
+    top: 1px;
+}
+
+.markdown-preview-view h2:hover::before,
+.HyperMD-header .cm-header-2:hover::before {
+    content: 'h2';
+    position: absolute;
+    font-size: 10px;
+    color: rgb(221 221 221);
+    font-weight: 400;
+    width: auto;
+    margin: 0;
+    left: -20px;
+    border: 1px solid;
+    padding: 0px 2px;
+    border-radius: 3px;
+    top: -4px;
+}
+
+/*--- H2 下面的横线 ---*/
+.markdown-preview-view h2,
+.HyperMD-header-2 {
+    margin: 2em auto 1.4em;
+    line-height: 1.4;
+    border-bottom: 2px solid var(--main-5);
+}
+
+/*--- H2 的大方块 ---*/
+.HyperMD-header .cm-header-2:not(.cm-formatting) {
+    display: inline-block;
+    font-weight: bold;
+    background: var(--main-5);
+    color: #ffffff;
+    padding: 3px 10px 1px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    margin-right: 3px;
+}
+
+/*--- H2 左侧的三角形 ---*/
+.HyperMD-header-2::after {
+    display: inline-block;
+    content: "";
+    vertical-align: bottom;
+    border-bottom: 36px solid #efebe9;
+    border-right: 20px solid transparent;
+}
+
+/*--- H2 右边的小圆点 (reading mode) --*/
+.markdown-preview-view h2::before {
+    content: '';
+    border-radius: 50%;
+    background-color: var(--main-5);
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    vertical-align: middle;
+    line-height: 1.43;
+    margin-bottom: 0.18em;
+    margin-right: 6px;
+}
+
+.markdown-preview-view h3:hover::before,
+.HyperMD-header .cm-header-3:hover::before {
+    content: 'h3';
+    position: absolute;
+    font-size: 10px;
+    color: rgb(221 221 221);
+    font-weight: 400;
+    width: auto;
+    margin: 0;
+    left: -20px;
+    border: 1px solid;
+    padding: 0px 2px;
+    border-radius: 3px;
+    top: -6px;
+}
+
+
+
+/*--- H3 左边的小圆点 ---*/
+.markdown-preview-view h3::before,
+.HyperMD-header .cm-header-3:not(.cm-formatting):not(:hover)::before {
+    content: '';
+    border-radius: 50%;
+    background-color: var(--main-5);
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    vertical-align: middle;
+    line-height: 1.43;
+    margin-bottom: 0.18em;
+    margin-right: 6px;
+}
+
+.markdown-preview-view h4:hover::before,
+.HyperMD-header .cm-header-4:hover::before {
+    content: 'h4';
+    position: absolute;
+    font-size: 10px;
+    color: rgb(221 221 221);
+    font-weight: 400;
+    width: auto;
+    margin: 0;
+    left: -21px;
+    border: 1px solid;
+    padding: 0px 2px;
+    border-radius: 3px;
+    top: -8px;
+}
+
+/*--- H4 左边的小短线 ---*/
+.markdown-preview-view h4::before,
+.HyperMD-header .cm-header-4:not(.cm-formatting):not(:hover)::before {
+    background-color: var(--main-4);
+    content: '';
+    width: 6px;
+    display: inline-block;
+    height: 2px;
+    vertical-align: middle;
+    margin-bottom: 0.18em;
+    margin-right: 8px;
+}
+
+.markdown-preview-view h5:hover::before,
+.HyperMD-header .cm-header-5:hover::before {
+    content: 'h5';
+    position: absolute;
+    font-size: 10px;
+    color: rgb(221 221 221);
+    font-weight: 400;
+    width: auto;
+    margin: 0;
+    left: -20px;
+    border: 1px solid;
+    padding: 0px 2px;
+    border-radius: 3px;
+    top: -11px;
+}
+
+.markdown-preview-view h6:hover::before,
+.HyperMD-header .cm-header-6:hover::before {
+    content: 'h6';
+    position: absolute;
+    font-size: 10px;
+    color: rgb(221 221 221);
+    font-weight: 400;
+    width: auto;
+    margin: 0;
+    left: -20px;
+    border: 1px solid;
+    padding: 0px 2px;
+    border-radius: 3px;
+    top: -11px;
+}
+
+:is(h5,
+    h6,
+    .HyperMD-header-5,
+    .HyperMD-header-6)::before {
+    content: "§ ";
+    font-size: 0.7em;
+    vertical-align: middle;
+    color: var(--main-4);
+    font-weight: 500;
+}
+
+/*Header END*/
+
+/*Hover Font color BEGIN*/
+.menu-item:hover:not(.is-disabled):not(.is-label),
+.suggestion-item.is-selected {
+    color: hsl(var(--interactive-accent-hsl));
+}
+
+/*Hover Font color END*/
+
+/*Navigator File BEGIN*/
+.nav-file-title.is-active::before {
+    border-left: 4px solid hsl(var(--interactive-accent-hsl));
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 0;
+    height: 100%;
+}
+
+/*Navigator File END*/
+
+/*--- url样式 ---*/
+.external-link,
+.cm-url {
+    font-weight: bold;
+}
+
+
+/*--- 粗体样式 ---*/
+.cm-strong,
+strong {
+    border-bottom: 1px dashed grey;
+    font-weight: bold;
+}
+
+
+/*--- 高亮样式 ---*/
+.cm-s-obsidian span.cm-highlight,
+mark {
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+body {
+    --text-highlight-bg: var(--main-3);
+}
+
+/* ----------------- 代码块主题 ----------------- */
+/* ed from https://github.com/liangjingkanji/DrakeTyporaTheme */
+/* Syntax highlighting */
+
+body {
+    --code-white-space: pre-wrap;
+    --code-radius: var(--radius-s);
+    --code-size: var(--font-smaller);
+    --code-background: #2B2B2B;
+    --code-normal: #A9B7C6;
+    --code-radius: 6px;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata,
+.cm-comment {
+    color: #61A151;
+}
+
+a.tag,
+.cm-meta {
+    color: var(--main-6);
+    font-weight: bold;
+}
+
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted,
+.cm-tag {
+    color: #E8BF6A;
+}
+
+.cm-punctuation,
+.cm-bracket,
+.cm-hr {
+    color: #E8BF6A;
+}
+
+.token.boolean,
+.token.number,
+.cm-number {
+    color: #6897BB;
+}
+
+.token.punctuation {
+    color: var(--code-normal);
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.inserted,
+.cm-qualifier,
+.cm-string,
+.cm-string-2 {
+    color: #6A8759;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name,
+.token.property-access,
+.token.function,
+.cm-def {
+    color: #FFD760;
+}
+
+.token.operator,
+.cm-operator {
+    color: #A9B7C6;
+}
+
+.cm-link {
+    color: #CC7832;
+}
+
+.token.entity,
+.token.parameter,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable,
+.cm-variable {
+    color: #A9B7C6;
+}
+
+.cm-variable-2 {
+    color: #A9B7C6;
+}
+
+.cm-variable-3 {
+    color: #E8BF6A;
+}
+
+.token.builtin,
+.cm-builtin {
+    color: #FF9E59;
+}
+
+.token.property,
+.cm-property {
+    color: #FFC66D;
+}
+
+.cm-attribute {
+    color: #9876AA;
+}
+
+.cm-type {
+    color: #9876AA;
+}
+
+.token.keyword,
+.cm-keyword {
+    color: #CC7832;
+}
+
+.token.regex,
+.token.important {
+    color: var(--code-important);
+}
