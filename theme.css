@@ -124,8 +124,19 @@ body {
     background-color: var(--main-0);
 }
 
+.markdown-rendered code {
+    color: var(--cus-inline-code-text);
+    background-color: var(--main-0);
+}
+
+.markdown-rendered pre > code {
+    color: var(--code-normal);
+}
+
+
 .markdown-rendered pre {
     border: 1px solid var(--cus-code-block-border);
+    color: var(--code-normal) !important;
 }
 
 .cm-s-obsidian div.HyperMD-codeblock-begin-bg {
@@ -443,10 +454,13 @@ body {
     color: #61A151;
 }
 
-a.tag,
-.cm-meta {
+a.tag {
     color: var(--main-6);
     font-weight: bold;
+}
+
+.cm-meta {
+    color: #BBB529;
 }
 
 .token.tag,
@@ -547,4 +561,8 @@ a.tag,
 .token.regex,
 .token.important {
     color: var(--code-important);
+}
+
+.token.shebang {
+    color: #BBB529;
 }
